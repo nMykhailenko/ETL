@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETL.Api", "ETL.Api\ETL.Api.csproj", "{C9F95B73-3F61-499E-87C0-B289B81A730C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETL.Shared", "ETL.Shared\ETL.Shared.csproj", "{4F56B8B5-3B6C-4A91-A46B-9F918D4622E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETL.Consumer", "ETL.Consumer\ETL.Consumer.csproj", "{69D79E0A-0010-4B7F-89B7-22ECD091B48D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C9F95B73-3F61-499E-87C0-B289B81A730C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9F95B73-3F61-499E-87C0-B289B81A730C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9F95B73-3F61-499E-87C0-B289B81A730C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9F95B73-3F61-499E-87C0-B289B81A730C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F56B8B5-3B6C-4A91-A46B-9F918D4622E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F56B8B5-3B6C-4A91-A46B-9F918D4622E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F56B8B5-3B6C-4A91-A46B-9F918D4622E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F56B8B5-3B6C-4A91-A46B-9F918D4622E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69D79E0A-0010-4B7F-89B7-22ECD091B48D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69D79E0A-0010-4B7F-89B7-22ECD091B48D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69D79E0A-0010-4B7F-89B7-22ECD091B48D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69D79E0A-0010-4B7F-89B7-22ECD091B48D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

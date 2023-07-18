@@ -1,0 +1,65 @@
+version: "3.6"
+networks:
+  etl:
+    driver: bridge
+
+services:
+    etl-rabbitmq:
+        container_name: rabbitmq
+        ports:
+            - 5672:5672
+            - 15672:15672
+        environment:
+            - RABBITMQ_DEFAULT_USER=guest
+            - RABBITMQ_DEFAULT_PASS=guest        
+        image: rabbitmq:3-management
+        networks:
+            - etl
+
+    etl-sql-server:
+        container_name: etl-db
+        image: mcr.microsoft.com/mssql/server:2022-latest
+        restart: unless-stopped
+        ports:
+            - 1435:1433
+        environment:
+            SA_PASSWORD: "Qwerty123!"
+            ACCEPT_EULA: "Y"
+        networks:
+            - etl
+                    
+    etl-api:
+        container_name: etl-api
+        ports:
+            - 8010:80
+        image: etl-api:latest   
+        build:
+            context: ./
+            dockerfile: ETL.Api/Dockerfile
+        restart: on-failure
+        links: 
+            - etl-sql-server
+            - etl-rabbitmq
+        depends_on:
+            - etl-sql-server
+            - etl-rabbitmq
+        networks:
+            - etl
+
+    etl-consumer:
+        container_name: etl-consumer
+        ports:
+            - 8020:80
+        image: etl-consumer:latest   
+        build:
+            context: ./
+            dockerfile: ETL.Consumer/Dockerfile
+        restart: on-failure
+        links: 
+            - etl-sql-server
+            - etl-rabbitmq
+        depends_on:
+            - etl-sql-server
+            - etl-rabbitmq
+        networks:
+            - etl
