@@ -37,7 +37,7 @@ app.MapGet("/hashes", async (ApplicationDbContext context) =>
         .GroupBy(x => x.Date.Date)
         .Select(x => new HashResponse
         {
-            Date = x.Key.Date.ToString("yyyy-mm-dd"),
+            Date = x.Key.Date.ToString("yyyy-MM-dd"),
             Count = x.Count()
         })
         .ToListAsync();
